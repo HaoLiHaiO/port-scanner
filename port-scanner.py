@@ -3,10 +3,10 @@
 import socket
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.settimeout(5)
 
-# hackthissite.org's IP
-host = "137.74.187.103"
-port = 443
+host = input("Please enter an IP address: ")
+port = int(input("Please enter a port: "))
 
 def portScanner(port):
     if s.connect_ex((host, port)):
